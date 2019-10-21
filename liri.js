@@ -6,10 +6,12 @@ var keys = require("./keys.js");
 // @link https://www.npmjs.com/package/axios
 var axios = require("axios");
 
+var movieName = process.argv.slice(2).join(' ');
+
 // Run the axios.get function...
 // The axios.get function takes in a URL and returns a promise (just like $.ajax)
 
-axios.get("https://www.npmjs.com/package/node-spotify-api").then(
+axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917a3e4").then(
   function(response) {
     // If the axios was successful...
     // Then log the body from the site!
@@ -56,11 +58,11 @@ axios.get("https://www.npmjs.com/package/node-spotify-api").then(
 
 
 
+// http://www.omdbapi.com/?i=tt3896198&apikey=f917a3e4
 
 
 
-
-
+// https://www.npmjs.com/package/node-spotify-api
 
 
 
