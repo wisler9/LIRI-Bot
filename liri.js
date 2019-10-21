@@ -1,4 +1,15 @@
-axios.get("https://en.wikipedia.org/wiki/Kudos_(granola_bar)").then(
+require("dotenv").config();
+
+var keys = require("./keys.js");
+
+// Grab the axios package...
+// @link https://www.npmjs.com/package/axios
+var axios = require("axios");
+
+// Run the axios.get function...
+// The axios.get function takes in a URL and returns a promise (just like $.ajax)
+
+axios.get("https://www.npmjs.com/package/node-spotify-api").then(
   function(response) {
     // If the axios was successful...
     // Then log the body from the site!
@@ -26,6 +37,21 @@ axios.get("https://en.wikipedia.org/wiki/Kudos_(granola_bar)").then(
 
 
 
+// var Spotify = require('node-spotify-api');
+ 
+// var spotify = new Spotify({
+//   id: <your spotify client id>,
+//   secret: <your spotify client secret>
+// });
+ 
+// spotify
+//   .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+//   .then(function(data) {
+//     console.log(data); 
+//   })
+//   .catch(function(err) {
+//     console.error('Error occurred: ' + err); 
+//   });
 
 
 
@@ -35,7 +61,6 @@ axios.get("https://en.wikipedia.org/wiki/Kudos_(granola_bar)").then(
 
 
 
-require("dotenv").config();
 
 
 
@@ -43,4 +68,5 @@ require("dotenv").config();
 
 
 
-var keys = require("./keys.js");
+
+
