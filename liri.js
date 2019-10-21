@@ -39,36 +39,28 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917
 
 
 
-// var Spotify = require('node-spotify-api');
+var Spotify = require('node-spotify-api');
  
-// var spotify = new Spotify({
-//   id: <your spotify client id>,
-//   secret: <your spotify client secret>
-// });
+var spotify = new Spotify({
+  id: process.env.SPOTIFY_ID,
+  secret: process.env.SPOTIFY_SECRET
+});
  
-// spotify
-//   .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
-//   .then(function(data) {
-//     console.log(data); 
-//   })
-//   .catch(function(err) {
-//     console.error('Error occurred: ' + err); 
-//   });
+spotify
+  .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+  .then(function(data) {
+    console.log(data); 
+  })
+  .catch(function(err) {
+    console.error('Error occurred: ' + err); 
+  });
 
 
 
 
-// http://www.omdbapi.com/?i=tt3896198&apikey=f917a3e4
+ {/* http://www.omdbapi.com/?i=tt3896198&apikey=f917a3e4
 
 
 
-// https://www.npmjs.com/package/node-spotify-api
-
-
-
-
-
-
-
-
+ https://www.npmjs.com/package/node-spotify-api */}
 
