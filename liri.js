@@ -15,7 +15,18 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917
   function(response) {
     // If the axios was successful...
     // Then log the body from the site!
-    console.log(response.data);
+    // console.log(response.data);
+    console.log("---------------------------------------------------------------------------------");
+    console.log("");
+    console.log(response.data.Title);
+    console.log(response.data.Year);
+    console.log(response.data.Ratings);
+    console.log(response.data.Country);
+    console.log(response.data.Language);
+    console.log(response.data.Plot);
+    console.log(response.data.Actors);
+    console.log("");
+    console.log("---------------------------------------------------------------------------------");
   },
 
   function(error) {
@@ -38,7 +49,7 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917
 );
 
 
-
+// Grab the spotify package...
 var Spotify = require('node-spotify-api');
  
 var spotify = new Spotify({
@@ -58,9 +69,5 @@ spotify
 
 
 
- {/* http://www.omdbapi.com/?i=tt3896198&apikey=f917a3e4
 
-
-
- https://www.npmjs.com/package/node-spotify-api */}
 
