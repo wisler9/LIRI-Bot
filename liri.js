@@ -6,15 +6,35 @@ var keys = require("./keys.js");
 // @link https://www.npmjs.com/package/axios
 var axios = require("axios");
 
-var movieName = process.argv.slice(2).join(' ');
+
+
+// switch (key) {
+//   case concert-this:
+    
+//     break;
+
+//   default:
+//     break;
+// }
+
+
+
+
+
+
+
+
+
+
+var movieThis = function() {
+  var movieName = process.argv.slice(3).join(' ');
 
 // Run the axios.get function...
 // The axios.get function takes in a URL and returns a promise (just like $.ajax)
 
 axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917a3e4").then(
   function(response) {
-    // If the axios was successful...
-    // Then log the body from the site!
+
     // console.log(response.data);
     console.log("---------------------------------------------------------------------------------");
     console.log("");
@@ -47,7 +67,13 @@ axios.get("http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=f917
     console.log(error.config);
   }
 );
+}
 
+var spotifyThisSong = function(){
+var songName = process.argv.slice(3).join(' ');;
+if(songName === "") {
+  songName = "The Sign";
+};
 
 // Grab the spotify package...
 var Spotify = require('node-spotify-api');
@@ -58,16 +84,49 @@ var spotify = new Spotify({
 });
  
 spotify
-  .request('https://api.spotify.com/v1/tracks/7yCPwWs66K8Ba5lFuU2bcx')
+  // .request('https://api.spotify.com/v1/track/7yCPwWs66K8Ba5lFuU2bcx')
+  .search({ type: 'track', query: songName })
   .then(function(data) {
-    console.log(data); 
+    console.log(data.tracks.items[0].name);
+    console.log(data.tracks.items[0].album.name);
+    console.log(data.tracks.items[0].artists[0].name);
+    console.log(data.tracks.items[0].external_urls);
   })
   .catch(function(err) {
     console.error('Error occurred: ' + err); 
   });
+}
+
+var concertThis = function(artist) {
+  var getEvents = artist;
+}
+
+axios.get("https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp").then(
+  function(response) {
+
+    console.log(response.data);
+    
+  },
+
+  function(error) {
+    if (error.response) {
+      // The request was made and the server responded with a status code
+      // that falls out of the range of 2xx
+      console.log(error.response.data);
+      console.log(error.response.status);
+      console.log(error.response.headers);
+    } else if (error.request) {
+      // The request was made but no response was received
+      // `error.request` is an object that comes back with details pertaining to the error that occurred.
+      console.log(error.request);
+    } else {
+      // Something happened in setting up the request that triggered an Error
+      console.log("Error", error.message);
+    }
+    console.log(error.config);
+  }
+);
 
 
-
-
-
+  
 
