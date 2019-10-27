@@ -20,7 +20,7 @@ To use Liri, you're able to give it 4 types of commands
 
 Will let you search the Bands in Town Artist Events API.
 
-![screenshot](/image/concertThis.png)   
+![screenshot](/images/concertThis.png)   
 
 
 
@@ -29,7 +29,7 @@ Will let you search the Bands in Town Artist Events API.
 
 This will search the [node-spotify-api] package to retrieve song information from spotify API.
 
-![screenshot](/image/spotifyThisSong.png)
+![screenshot](/images/spotifyThisSong.png)
 
 
 
@@ -37,7 +37,7 @@ This will search the [node-spotify-api] package to retrieve song information fro
 
 This will search the OMDB API for movies
 
-![screenshot](/image/movieThis.png)
+![screenshot](/images/movieThis.png)
 
 
 
@@ -46,4 +46,4 @@ This will search the OMDB API for movies
 
 This will take the text inside of `random.txt` using fs package and then use it to call the liri commands.
 
-![screenshot](/image/doWhatItSays.png)
+![screenshot](/images/doWhatItSays.png)
