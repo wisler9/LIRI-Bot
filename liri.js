@@ -50,7 +50,6 @@ function movieThis(movieName) {
     console.log(response.data.Ratings[0].Value);
     console.log(response.data.Ratings[1].Source);
     console.log(response.data.Ratings[1].Value);
-    // console.log(response.data.Ratings);
     console.log(response.data.Country);
     console.log(response.data.Language);
     console.log(response.data.Plot);
@@ -93,12 +92,14 @@ spotify
   spotify.search({ type: 'track', query: songName })
   .then(function(data) {
     // console.log(data.tracks.items[0]);
-    console.log(" ");
+    console.log("---------------------------------------------------------------------------------");
+    console.log("");
     console.log("Song Name: " + data.tracks.items[0].name);
     console.log("Album: " + data.tracks.items[0].album.name);
     console.log("Artist: " + data.tracks.items[0].artists[0].name);
     console.log("URL: " + data.tracks.items[0].external_urls.spotify);
-    console.log(" ");
+    console.log("");
+    console.log("---------------------------------------------------------------------------------");
   })
   .catch(function(err) {
     console.error('Error occurred: ' + err);
@@ -115,14 +116,15 @@ axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=cod
       // console.log(`----------->`,response.data);
       // console.log(response);
       // console.log(response.data[0]);
-      console.log(" ");
+      console.log("---------------------------------------------------------------------------------");
+      console.log("");
       console.log("Artist: " + response.data[0].lineup[0]);
       console.log("Venue Name: " + response.data[0].venue.name);
       console.log("State: " + response.data[0].venue.region);
       console.log("City: " + response.data[0].venue.city);
       console.log("Time: " + response.data[0].datetime);
-      console.log(" ");
-
+      console.log("");
+      console.log("---------------------------------------------------------------------------------");
     }, 
       // var fDate = response.data[events].datetime;
       // var forDate = moment(fDate).format("MM/DD/YYYY");
