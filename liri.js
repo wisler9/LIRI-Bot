@@ -46,7 +46,11 @@ function movieThis(movieName) {
     console.log("");
     console.log(response.data.Title);
     console.log(response.data.Year);
-    console.log(response.data.Ratings);
+    console.log(response.data.Ratings[0].Source);
+    console.log(response.data.Ratings[0].Value);
+    console.log(response.data.Ratings[1].Source);
+    console.log(response.data.Ratings[1].Value);
+    // console.log(response.data.Ratings);
     console.log(response.data.Country);
     console.log(response.data.Language);
     console.log(response.data.Plot);
